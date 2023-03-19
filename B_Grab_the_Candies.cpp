@@ -23,9 +23,17 @@ int main() {
             }
         }
 
-        if (odd == 0 || (even > 0 && even % 2 == 0)) {
+        if (even > 0 && odd > 0 && even >= odd) {
+            
+            cout << "YES\n";
+        } else if (even == 0 && odd > 0) {
+            
+            cout << "NO\n";
+        } else if (even > 0 && odd == 0) {
+            
             cout << "YES\n";
         } else {
+            
             cout << "NO\n";
         }
     }
