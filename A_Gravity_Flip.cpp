@@ -1,27 +1,20 @@
 #include <iostream>
-using namespace std;
-int main(){
-    int n, temp;
-    cin>>n;
-    int *arr = new int[n];
-    for(int i=0; i<n; i++){
-        cin>>arr[i];
-        
-    }
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                
-             temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
+#include <vector>
+#include <algorithm>
 
-    
-    for (int i=0; i<n;i++){
-        cout<<arr[i]<<" ";
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    sort(arr.begin(), arr.end());
+    //The time complexity of the sort function in the code is O(n log n), comparison-based algorithm, such as quicksort or mergesort
+    for (int i : arr){
+        cout << i << " ";
     }
     return 0;
 }
