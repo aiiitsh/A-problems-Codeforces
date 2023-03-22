@@ -13,29 +13,28 @@ int main(){
     int counter_lo=0, counter_up=0;
     cin>> s;
     
-    for(int i=0;i<s.length();i++){
-        if (int(s[i])>90){
-            counter_lo ++;
+    for (char c : s) {
+        if (c >= 'a' && c <= 'z') {
+            counter_lo++;
+        } else if (c >= 'A' && c <= 'Z') {
+            counter_up++;
         }
-        else if (int(s[i])<=90){
-counter_up++;
-        }
-        
-
     }
     
-    if(counter_up>counter_lo){
-        transform(s.begin(), s.end(), s.begin(), ::toupper);
-    cout<<s<<endl;
-        
-        
-
-    }
-        
     
-    else {
-        transform(s.begin(), s.end(), s.begin(), ::tolower);
-    cout<<s<<endl;
+    if (counter_up > counter_lo) {
+        for (char &c : s) {
+            c = toupper(c);
+            
+        }
+        
+    } else {
+        for (char &c : s) {
+            c = tolower(c);
+        }
     }
+    cout << s ;
+
+   
     return 0;
 }
