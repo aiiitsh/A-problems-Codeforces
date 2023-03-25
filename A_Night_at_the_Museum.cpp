@@ -7,7 +7,8 @@ int main() {
         int counter=0;
         char current='a', previous='a';
         cin>>x;
-        for(int i=0;i<x.length();i++){
+        int len = x.length();
+        for(int i=0;i<len;i++){
             current=x[i];
             counter = counter + min ((current - previous +26)%26,(previous-current+26)%26);
             previous = x[i];
