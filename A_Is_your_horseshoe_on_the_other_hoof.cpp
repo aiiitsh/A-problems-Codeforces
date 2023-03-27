@@ -1,19 +1,10 @@
 #include <iostream>
-#include <cmath>
+#include <set>
 using namespace std;
 
 int main() {
-    int a, b, c, d, counter=0;
-    
-    cin>>a>>b>>c>>d;
-    if(a==b || a ==c || a==d) {
-        counter++;
-    }
-    if(b==c || b ==d ) {
-        counter++;
-    }
-    if(c==d  ) {
-        counter++;
-    }   
-    cout<<counter;
-    return 0;}
+    int s1, s2, s3, s4;
+    cin >> s1 >> s2 >> s3 >> s4;
+    cout << 4 - set<int>{s1, s2, s3, s4}.size();
+    return 0;
+}
